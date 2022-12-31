@@ -3,9 +3,9 @@ import cntl from "cntl"
 export const HamburgerIcon = () => {
   return (
     <>
-      <span className={FirstBorder}></span>
-      <span className={SecondBorder}></span>
-      <span className={ThirdBorder}></span>
+      <span className={FirstBorder} />
+      <span className={SecondBorder} />
+      <span className={ThirdBorder} />
     </>
   )
 }
