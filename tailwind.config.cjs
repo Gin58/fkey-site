@@ -1,4 +1,4 @@
-
+const keyframes = require('./tailwind/keyframes/index.js')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -9,50 +9,7 @@ module.exports = {
 		},
 		extend: {
 			keyframes: {
-				menubarFirst: {
-					'0%': {
-						transform: 'translateY(10px) rotate(45deg)'
-					},			
-					'50%': {
-						transform: 'translateY(10px) rotate(0)'
-					},
-					'100%': {
-						transform: 'translateY(0) rotate(0)'
-					}
-				},
-				menubarLast: {
-					'0%': {
-						transform: 'translateY(-10px) rotate(-45deg)'
-					},
-					'50%': {
-						transform: 'translateY(-10px) rotate(0)'
-					},		
-					'100%': {
-						transform: 'translateY(0) rotate(0)'
-					}
-				},
-				activeMenubarFirst: {
-					'0%': {
-						transform: 'translateY(0) rotate(0)'
-					},
-					'50%': {
-						transform: 'translateY(10px) rotate(0)'
-					},
-					'100%': {
-						transform: 'translateY(10px) rotate(45deg)'
-					}
-				},
-				activeMenubarLast: {
-					'0%': {
-						transform: 'translateY(0) rotate(0)'
-					},
-					'50%': {
-						transform: 'translateY(-10px) rotate(0)'
-					},
-					'100%': {
-						transform: 'translateY(-10px) rotate(-45deg)'
-					}
-				}
+				...keyframes,
 			}
 		},
 		animation: {

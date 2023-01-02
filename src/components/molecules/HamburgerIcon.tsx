@@ -7,9 +7,9 @@ type Props = {
 export const HamburgerIcon = ({ isOpen }: Props) => {
   return (
     <>
-      <span className={isOpen ? CloseFirst : OpenFirst} />
-      <span className={isOpen ? CloseSecond : OpenSecond} />
-      <span className={isOpen ? CloseThird : OpenThird} />
+      <span className={isOpen ? OpenFirst : CloseFirst} />
+      <span className={isOpen ? OpenSecond : CloseSecond} />
+      <span className={isOpen ? OpenThird : CloseThird} />
     </>
   )
 }
