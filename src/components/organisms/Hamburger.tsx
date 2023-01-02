@@ -18,11 +18,14 @@ export const Hamburger = ({ list }: Props) => {
         <HamburgerIcon isOpen={isOpen} />
       </div>
       <div className={isOpen ? OpenList : CloseList }>
-        <ul className='w-full h-full p-10 m-10 flex flex-col'>
+        <ul className='w-full h-full p-10 mt-10 flex flex-col'>
           {list.map(item => (
-            <li key={item.label}>
-              {item.label}
-            </li>
+            <a key={item.label} className="py-4 border-b border-solid border-black text-3xl flex justify-between items-center">
+              <li>
+                {item.label}
+              </li>
+              <span className="text-sm">&rarr;</span>
+            </a>
           ))}
         </ul>
       </div>
@@ -31,17 +34,16 @@ export const Hamburger = ({ list }: Props) => {
 }
 
 const List = cntl`
-  fixed
   w-screen
   h-screen
   left-0
   top-0
+  fixed
   bg-primary
-  z-40
   transition-all
   duration-[250ms]
   delay-[250ms]
 `
 
-const OpenList = `${List} opacity-100`
-const CloseList = `${List} opacity-0`
+const OpenList = `${List} opacity-100 z-40`
+const CloseList = `${List} opacity-0 z-auto`
