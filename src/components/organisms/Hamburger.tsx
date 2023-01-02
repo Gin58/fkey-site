@@ -5,7 +5,7 @@ export const Hamburger = () => {
 
   return (
     <div className="relative w-8 h-[22px] cursor-pointer" onClick={() => setIsOpen((bool) => !bool)}>
-      <HamburgerIcon />
+      <HamburgerIcon isOpen={isOpen} />
     </div>
 
   )

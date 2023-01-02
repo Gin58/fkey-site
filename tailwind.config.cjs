@@ -5,6 +5,36 @@ module.exports = {
 		colors: {
 			'primary': '#89ced1',
 			'black': '#222222'
+		},
+		extend: {
+			keyframes: {
+				menubarFirst: {
+					'0%': {
+						transform: 'translateY(10px) rotate(45deg)'
+					},			
+					'50%': {
+						transform: 'translateY(10px) rotate(0)'
+					},
+					'100%': {
+						transform: 'translateY(0) rotate(0)'
+					}
+				},
+				menubarLast: {
+					'0%': {
+						transform: 'translateY(-10px) rotate(-45deg)'
+					},
+					'50%': {
+						transform: 'translateY(-10px) rotate(0)'
+					},		
+					'100%': {
+						transform: 'translateY(0) rotate(0)'
+					}
+				}
+			}
+		},
+		animation: {
+			menubarFirst: 'menubarFirst 0.75s',
+			menubarLast: 'menubarLast 0.75s'
 		}
 	},
 	plugins: [],
