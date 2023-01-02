@@ -3,13 +3,13 @@ const keyframes = require('./tailwind/keyframes/index.js')
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		colors: {
-			'primary': '#89ced1',
-			'black': '#222222'
-		},
 		extend: {
 			keyframes: {
 				...keyframes,
+			},
+			colors: {
+				'primary': '#89ced1',
+				'black': '#222222'
 			}
 		},
 		animation: {

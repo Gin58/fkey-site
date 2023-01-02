@@ -14,7 +14,7 @@ export const Hamburger = ({ list }: Props) => {
 
   return (
     <>
-      <div className="fixed top-4 right-4 w-8 h-[22px] cursor-pointer z-50" onClick={() => setIsOpen((bool) => !bool)}>
+      <div className="relative w-8 h-[22px] cursor-pointer z-50" onClick={() => setIsOpen((bool) => !bool)}>
         <HamburgerIcon isOpen={isOpen} />
       </div>
       <div className={isOpen ? OpenList : CloseList }>
@@ -39,11 +39,11 @@ const List = cntl`
   left-0
   top-0
   fixed
-  bg-primary
+  bg-white
   transition-all
   duration-[250ms]
   delay-[250ms]
 `
 
 const OpenList = `${List} opacity-100 z-40`
-const CloseList = `${List} opacity-0 z-auto`
+const CloseList = `${List} opacity-0 z-[-1]`
