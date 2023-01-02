@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -29,12 +30,36 @@ module.exports = {
 					'100%': {
 						transform: 'translateY(0) rotate(0)'
 					}
+				},
+				activeMenubarFirst: {
+					'0%': {
+						transform: 'translateY(0) rotate(0)'
+					},
+					'50%': {
+						transform: 'translateY(10px) rotate(0)'
+					},
+					'100%': {
+						transform: 'translateY(10px) rotate(45deg)'
+					}
+				},
+				activeMenubarLast: {
+					'0%': {
+						transform: 'translateY(0) rotate(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px) rotate(0)'
+					},
+					'100%': {
+						transform: 'translateY(-10px) rotate(-45deg)'
+					}
 				}
 			}
 		},
 		animation: {
-			menubarFirst: 'menubarFirst 0.75s',
-			menubarLast: 'menubarLast 0.75s'
+			menubarFirst: 'menubarFirst 0.75s forwards',
+			menubarLast: 'menubarLast 0.75s forwards',
+			activeMenubarFirst: 'activeMenubarFirst 0.75s forwards',
+			activeMenubarLast: 'activeMenubarLast 0.75s forwards'
 		}
 	},
 	plugins: [],

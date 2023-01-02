@@ -7,20 +7,30 @@ type Props = {
 export const HamburgerIcon = ({ isOpen }: Props) => {
   return (
     <>
-      <span className={FirstBorder} />
-      <span className={SecondBorder} />
-      <span className={ThirdBorder} />
+      <span className={isOpen ? CloseFirst : OpenFirst} />
+      <span className={isOpen ? CloseSecond : OpenSecond} />
+      <span className={isOpen ? CloseThird : OpenThird} />
     </>
   )
 }
 
-const Border = cntl`
+const Base = cntl`
   absolute
   bg-black
   w-full
   h-0.5
   rounded
 `
-const FirstBorder = Border + ' top-0 animate-menubarFirst'
-const SecondBorder = Border + ' top-2.5'
-const ThirdBorder = Border + ' bottom-0 animate-menubarLast'
+const CloseFirst = `${Base} top-0 animate-menubarFirst`
+const OpenFirst = `${Base} top-0 animate-activeMenubarFirst`
+const Second = cntl`
+  top-2.5
+  transition-all
+  duration-[250ms]
+  delay-[250ms]
+`
+const CloseSecond = `${Base} ${Second} opacity-100`
+const OpenSecond = `${Base} ${Second} opacity-0`
+
+const CloseThird = `${Base} bottom-0 animate-menubarLast`
+const OpenThird = `${Base} bottom-0 animate-activeMenubarLast`
