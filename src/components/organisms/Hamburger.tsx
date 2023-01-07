@@ -20,7 +20,7 @@ export const Hamburger = ({ list }: Props) => {
       <div className={isOpen ? OpenList : CloseList }>
         <ul className='w-full h-full p-10 mt-10 flex flex-col'>
           {list.map(item => (
-            <a key={item.label} className="py-4 border-b border-solid border-black text-3xl flex justify-between items-center">
+            <a key={item.label} className={isOpen ? OpenListItem : CloseListItem}>
               <li>
                 {item.label}
               </li>
@@ -46,4 +46,21 @@ const List = cntl`
 `
 
 const OpenList = `${List} opacity-100 z-40`
-const CloseList = `${List} opacity-0 z-[-1]`
+const CloseList = `${List} opacity-0 -z-10`
+
+const ListItem = cntl`
+  py-4
+  border-b
+  border-solid
+  border-black
+  text-3xl
+  flex
+  justify-between
+  items-center
+  transform
+  duration-[500ms]
+  delay-[500ms]
+`
+
+const OpenListItem = `${ListItem} opacity-100 translate-x-0`
+const CloseListItem = `${ListItem} opacity-0 -translate-x-4`
