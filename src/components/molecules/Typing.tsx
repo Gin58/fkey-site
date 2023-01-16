@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from 'react'
-import { useTyping } from '../../hooks/useTyping';
+import { useTyping } from '../../hooks/useTyping'
 
 type Props = {
   cursor?: boolean
