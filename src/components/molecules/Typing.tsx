@@ -17,10 +17,6 @@ export const Typing = memo(function Typing({
   const { text } = useTyping('Web Specialist Company', speed, delay)
 
   return (
-    <div
-      className={className + (cursor ? ' cursor-blink' : '')}
-    >
-      {text}
-    </div>
+    <div className={className + (cursor ? ' cursor-blink' : '')}>{text}</div>
   )
 })

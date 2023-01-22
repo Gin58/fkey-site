@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
-const sleep = (second: number) => new Promise(resolve => setTimeout(resolve, second * 1000))
+import { useEffect, useState } from 'react'
+const sleep = (second: number) =>
+  new Promise((resolve) => setTimeout(resolve, second * 1000))
 
 export const useTyping = (message: string, speed = 50, delay = 0) => {
   const [text, setText] = useState('')
@@ -13,12 +14,12 @@ export const useTyping = (message: string, speed = 50, delay = 0) => {
         if (nextChar.done) {
           return
         }
-        setText(current => current + nextChar.value)
+        setText((current) => current + nextChar.value)
         timerId = setTimeout(showChar, speed)
       }
       showChar()
-  
-      return () => clearTimeout(timerId);
+
+      return () => clearTimeout(timerId)
     })()
   }, [])
 

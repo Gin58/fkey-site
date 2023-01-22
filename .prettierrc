@@ -1,0 +1,17 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "endOfLine": "auto",
+  "importOrder": [
+    "^assets/(.*)$",
+    "^components/pages(.*)$",
+    "^components/templates(.*)$",
+    "^components/organisms(.*)$",
+    "^components/molecules(.*)$",
+    "^components/atoms(.*)$",
+    "^utils/(.*)$",
+    "^[./]"
+  ]
+}

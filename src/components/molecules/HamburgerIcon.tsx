@@ -1,4 +1,4 @@
-import cntl from "cntl"
+import cntl from 'cntl'
 
 type Props = {
   isOpen: boolean

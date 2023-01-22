@@ -14,16 +14,20 @@ export const Hamburger = ({ list }: Props) => {
 
   return (
     <>
-      <div className="relative w-8 h-[22px] cursor-pointer z-50" onClick={() => setIsOpen((bool) => !bool)}>
+      <div
+        className="relative w-8 h-[22px] cursor-pointer z-50"
+        onClick={() => setIsOpen((bool) => !bool)}
+      >
         <HamburgerIcon isOpen={isOpen} />
       </div>
-      <div className={isOpen ? OpenList : CloseList }>
-        <ul className='w-full h-full p-10 mt-10 flex flex-col'>
-          {list.map(item => (
-            <a key={item.label} className={isOpen ? OpenListItem : CloseListItem}>
-              <li>
-                {item.label}
-              </li>
+      <div className={isOpen ? OpenList : CloseList}>
+        <ul className="w-full h-full p-10 mt-10 flex flex-col">
+          {list.map((item) => (
+            <a
+              key={item.label}
+              className={isOpen ? OpenListItem : CloseListItem}
+            >
+              <li>{item.label}</li>
               <span className="text-sm">&rarr;</span>
             </a>
           ))}
