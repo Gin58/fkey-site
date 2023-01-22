@@ -8,7 +8,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "preinstall": "typesync || :"
+    "lint-staged": "lint-staged",
+    "preinstall": "typesync || :",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,astro}": [
+      "prettier --write --loglevel=error"
+    ]
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",
@@ -29,6 +36,8 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-astro": "^0.23.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.7.2",
     "typesync": "^0.9.2"
