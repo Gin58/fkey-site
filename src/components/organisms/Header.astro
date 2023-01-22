@@ -1,22 +1,35 @@
 ---
-import { Hamburger } from "./Hamburger"
+import { Hamburger } from './Hamburger'
 type List = {
   label: string
   href: string
 }
-const LIST: List[] = [{
-  label: 'About', href: '#'
-}, {
-  label: 'Service', href: '#'
-}, {
-  label: 'Works', href: '#'
-}, {
-  label: 'Recruit', href: '#'
-}, {
-  label: 'Blog', href: '#'
-}, {
-  label: 'Contact', href: '#'
-}]
+const LIST: List[] = [
+  {
+    label: 'About',
+    href: '#'
+  },
+  {
+    label: 'Service',
+    href: '#'
+  },
+  {
+    label: 'Works',
+    href: '#'
+  },
+  {
+    label: 'Recruit',
+    href: '#'
+  },
+  {
+    label: 'Blog',
+    href: '#'
+  },
+  {
+    label: 'Contact',
+    href: '#'
+  }
+]
 ---
 
 <nav class="w-full flex justify-between items-center px-4 mb-4">
@@ -24,11 +37,13 @@ const LIST: List[] = [{
     <img width="200" src="/logo.png" />
   </a>
   <ul class="text-sm font-bold gap-6 hidden md:flex">
-    {LIST.map(item => (
-      <li class="links">
-        <a href={item.href}>{item.label}</a>
-      </li>
-    ))}
+    {
+      LIST.map((item) => (
+        <li class="links">
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))
+    }
   </ul>
   <div class="md:hidden block">
     <Hamburger list={LIST} client:visible />
@@ -36,7 +51,7 @@ const LIST: List[] = [{
 </nav>
 
 <style>
-.links {
-  @apply hover:text-primary
-}
+  .links {
+    @apply hover:text-primary;
+  }
 </style>

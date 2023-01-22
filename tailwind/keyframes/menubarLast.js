@@ -5,7 +5,7 @@ module.exports = menubarLast = {
     },
     '50%': {
       transform: 'translateY(-10px) rotate(0)'
-    },		
+    },
     '100%': {
       transform: 'translateY(0) rotate(0)'
     }
